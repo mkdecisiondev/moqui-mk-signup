@@ -1,0 +1,79 @@
+<services>
+    <service verb="create" noun="userAccount">   
+        <in-parameters>
+            <parameter name="firstName"/>
+            <parameter name="lastName"/>
+            <parameter name="username"/>
+            <parameter name="newPassword"/>
+            <parameter name="newPasswordVerify"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+        <actions>
+            <script>
+                EntityValue queryForUsername = ec.entity.find("mantle.party.PersonAndUserAccount").condition( [ "username" : username ] ).one()
+            </script>
+
+            <if condition="queryForUsername != null">
+                <return error="true" message="Username already exists"/>
+            </if>
+
+            <if condition="queryForUsername == null">
+                <service-call name="mantle.party.PartyServices.create#PersonCustomer" in-map="[partyId:partyId] + context" out-map="context"/>
+                <service-call name="org.moqui.impl.UserServices.create#UserAccount" in-map="[partyId:partyId] + context" out-map="context"/>
+            </if>
+
+            <script>
+                println "-------------------create user account-------------------------"
+                println context
+            </script>
+        </actions>
+    </service>
+
+    <service verb="store" noun="PartyContact">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="organizationName"/>
+            <parameter name="contactNumber"/>
+            <parameter name="countryGeoId"/>
+            <parameter name="lastName"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="postalCode"/>
+            <parameter name="city"/>
+            <parameter name="stateProvinceGeoId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+        <actions>
+            <service-call name="mantle.party.ContactServices.store#PartyContactInfo" in-map="[partyId:partyId] + context" out-map="context"/>
+            <service-call name="create#mantle.party.Organization" in-map="[partyId:partyId] + context" out-map="context"/>
+            <script>
+                println "-------------------store party contact-------------------------"
+                println context
+                println partyId
+            </script>
+        </actions>
+    </service>
+
+    <service verb="create" noun="PaymentMethod">
+        <in-parameters>
+            <parameter name="description"/>
+            <parameter name="typeEnumId"/>
+            <parameter name="firstNameOnAccount"/>
+            <parameter name="lastNameOnAccount"/>
+            <parameter name="routingNumber"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <actions>
+            <service-call name="mantle.account.PaymentMethodServices.create#BankAccount" in-map="[ownerPartyId:partyId] + context" out-map="context"/>
+            <script>
+                println "-------------------create payment method-------------------------"
+                println context
+            </script>
+        </actions>
+    </service>
+
+</services> 

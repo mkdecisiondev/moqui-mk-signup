@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" type="text/css" media="screen" href="Styling/MKSignUpForm.css"/>
+    <title>MK Sign Up Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        MK Decision
+      </div>
+    </header>
+    <div class="progress-bar-75"></div>
+
+    <form action="/apps/MKSignUp/MKBillingForm/mkbillingform" method="post">
+      <div class="subheader">
+        Billing Information
+      </div>
+
+      <div class="blurb">
+        You will not be charged until you activate services. Demos are 100% free!
+      </div>
+
+      <div class="label-and-input">
+          <label for="paymentMethodTypeEnumId">Payment Method</label>
+          <br/>
+          <select required id="paymentMethodTypeEnumId"  name="paymentMethodTypeEnumId">
+            <option class="blank label"></option>
+            <option value="PmtBankAccount">Bank Account</option>
+          </select>
+      </div>
+
+      <section class="radio-container">
+          <div>Type:</div>
+          <div class="radio-input-and-label">
+              <input class="radio-input" required type="radio" id="BatChecking" name="typeEnumId" value="BatChecking">
+              <label class="radio-label" for="BatChecking"> Checking</label>
+          </div>
+
+          <div class="radio-input-and-label">
+              <input class="radio-input" required type="radio" id="BatSavings" name="typeEnumId" value="BatSavings">
+              <label class="radio-label" for="BatSavings"> Savings </label>
+          </div>
+      </section>
+
+      <div class="label-and-input">
+          <label for="firstNameOnAccount">First Name on Account</label>
+          <br/>
+          <input required id="firstNameOnAccount" name="firstNameOnAccount" type="text" pattern=".{1,}">
+      </div>
+
+      <div class="label-and-input">
+          <label for="lastNameOnAccount">Last Name on Account</label>
+          <br/>
+          <input required id="lastNameOnAccount" name="lastNameOnAccount" type="text" pattern=".{1,}">
+      </div>
+
+      <div class="label-and-input">
+          <label for="routingNumber">Routing Number</label>
+          <br/>
+          <input required id="routingNumber" name="routingNumber" type="tel" pattern="^([0-9]{9})$" title="please enter 9 digits">
+      </div>
+
+      <div class="label-and-input">
+          <label for="accountNumber">Account Number</label>
+          <br/>
+          <input required id="accountNumber" name="accountNumber" type="tel" pattern="^([0-9]*[0-9]{4})$" title="please enter a valid account number">
+      </div>
+
+      <button type="submit">Finish Sign Up</button>
+    </form>
+  </body>
+</html> 

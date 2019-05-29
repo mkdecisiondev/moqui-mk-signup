@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" type="text/css" media="screen" href="Styling/MKSignUpForm.css"/>
+    <title>MK Sign Up Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        MK Decision
+      </div>
+      <div>
+        <button class="nav-signin-button" ><a style="text-decoration: none; color: black" href="./MKSignUpForm">Create an MK Account</a></button>
+      </div>
+    </header>
+    <div class="progress-bar-0"></div>
+
+    <form action="/apps/MKSignUp/MKLoginPage/login" method="post">
+      <div class="subheader">
+        Login
+      </div>
+      <div class="label-and-input">
+        <label for="username">Email Address</label>
+        <br/>
+        <input required type="email" id="username" name="username">
+      </div>
+      <div class="label-and-input">
+        <label for="password">Password</label>
+        <br/>
+        <input required type="password" id="password" name="password" pattern="^(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[a-z]).*$" title="8 characters min, at least one special character, at least one number, at least one letter">
+      </div>
+      <button type="submit">Login</button>
+      <a style="text-decoration: none; color: blue; margin-top: 17px; font-size: 15px;" href="./MKSignUpForm">Don't have an account? Create account</a>
+    </form>
+  </body>
+</html> 

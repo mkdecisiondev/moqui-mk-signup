@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<screen require-authentication="anonymous-all"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
+
+    <transition name="login" require-session-token="false">
+        <actions>
+            <script>
+                println "-----------------------------------------------------"
+                println partyId
+                println username
+                println password
+            </script>
+            <script>ec.user.loginUser(username, password)</script>
+        </actions>
+        <default-response url="../MKContactForm"/>
+        <error-response url="."/>
+    </transition>
+
+    <transition name="json" method="options" require-session-token="false">
+        <default-response type="none" />
+    </transition>
+
+
+    <widgets>
+        <render-mode>
+            <text type="html,vuet" location="component://MKSignUp/screen/MKSignUp/Pages/MKLoginPage.html"/>
+        </render-mode>
+    </widgets>
+
+
+</screen> 

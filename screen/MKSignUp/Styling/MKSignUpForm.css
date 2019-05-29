@@ -1,0 +1,148 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: static;
+  z-index: 100;
+  height: 50px;
+  background-color: lightgray;
+}
+
+.header-logo {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.subheader {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.label-and-input {
+  width: 250px;
+}
+
+label {
+  display: flex;
+  width: 250px;
+  justify-content: left;
+  font-size: 13px;
+  color: gray;
+  font-weight: 100;
+  margin-bottom: -15px;
+}
+
+input {
+  display: flex;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  height: 17px;
+  margin-bottom: 17px;
+}
+
+select {
+  display: flex;
+  width: 254px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  height: 23px;
+  margin-bottom: 17px;
+}
+
+button {
+  width: 250px;
+  height: 28px;
+  border-radius: 15px;
+  border: 1px solid black;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.nav-signin-button {
+  width: 200px;
+  top: 20px;
+  right: 25px;
+  position: absolute;
+}
+
+.blurb {
+  width: 250px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.radio-container {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+}
+
+.radio-input-and-label {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  margin-left: 14px;
+}
+
+.radio-input {
+  width: 25px;
+}
+
+.radio-label {
+  width: 75px;
+}
+
+.welcome-container {
+  width: 500px;
+  margin: auto;
+}
+
+.welcome-blurb {
+  font-size: 15px;
+}
+
+.progress-bar-0 {
+  width: 0%;
+  height: 10px;
+  background-color: orange;
+  margin-bottom: 30px;
+}
+
+.progress-bar-25 {
+  width: 25%;
+  height: 10px;
+  background-color: orange;
+  margin-bottom: 30px;
+}
+
+.progress-bar-50 {
+  width: 50%;
+  height: 10px;
+  background-color: orange;
+  margin-bottom: 30px;
+}
+
+.progress-bar-75 {
+  width: 75%;
+  height: 10px;
+  background-color: orange;
+  margin-bottom: 30px;
+}
+
+.progress-bar-complete {
+  height: 10px;
+  background-color: orange;
+  margin-bottom: 30px;
+} 

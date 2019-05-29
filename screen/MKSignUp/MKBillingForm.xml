@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<screen require-authentication="anonymous-all"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
+
+    <transition name="mkbillingform" require-session-token="false" method="post" >
+        <service-call name="MKSignUpServices.create#PaymentMethod" in-map="context" out-map="context"/>
+        <default-response url="../MKWelcomePage"/>
+    </transition>
+
+    <transition name="json" method="options" require-session-token="false">
+        <default-response type="none" />
+    </transition>
+
+    <actions>
+    </actions>
+
+    <widgets>
+        <render-mode>
+            <text type="html,vuet" location="component://MKSignUp/screen/MKSignUp/Pages/MKBillingForm.html"/>
+        </render-mode>
+    </widgets>
+
+    
+</screen>

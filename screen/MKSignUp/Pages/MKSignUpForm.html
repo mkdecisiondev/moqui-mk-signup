@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" type="text/css" media="screen" href="Styling/MKSignUpForm.css"/>
+    <title>MK Sign Up Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        MK Decision
+      </div>
+      <div>
+        <button class="nav-signin-button" ><a style="text-decoration: none; color: black" href="./MKLoginPage">Sign in to Dashboard</a></button>
+      </div>
+    </header>
+    <div class="progress-bar-0"></div>
+
+    <form action="/apps/MKSignUp/MKSignUpForm/mksignup" method="post">
+      <div class="subheader">
+        Get Started for Free
+      </div>
+      <div class="label-and-input">
+        <label for="firstName">First Name</label>
+        <br/>
+        <input required type="text" id="firstName" name="firstName">
+      </div>
+      <div class="label-and-input">
+        <label for="lastName">Last Name</label>
+        <br/>
+        <input required type="text" id="lastName" name="lastName">
+      </div>
+      <div class="label-and-input">
+        <label for="username">Email Address</label>
+        <br/>
+        <input required type="email" id="username" name="username">
+      </div>
+      <div class="label-and-input">
+        <label for="newPassword">Create a Password</label>
+        <br/>
+        <input required type="password" id="newPassword" name="newPassword" pattern="^(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[a-z]).*$" title="8 characters min, at least one special character, at least one number, at least one letter">
+      </div>
+      <div class="label-and-input">
+        <label for="newPasswordVerify">Confirm Password</label>
+        <br/>
+        <input required type="password" id="newPasswordVerify" name="newPasswordVerify" pattern="^(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[a-z]).*$" title="8 characters min, at least one special character,at least one number, at least one letter">
+      </div>
+      <button type="submit">Create an MK Account</button>
+      <a style="text-decoration: none; color: blue; margin-top: 17px; font-size: 15px;" href="./MKLoginPage">Already have an account? Sign in</a>
+    </form>
+  </body>
+</html>
