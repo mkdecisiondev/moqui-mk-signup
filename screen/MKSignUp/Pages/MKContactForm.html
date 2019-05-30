@@ -9,6 +9,9 @@
       <div class="header-logo">
         MK Decision
       </div>
+      <div>
+        <button class="nav-signin-button" ><a style="text-decoration: none; color: black" href="./MKContactForm/logout">Logout</a></button>
+      </div>
     </header>
     <div class="progress-bar-50"></div>
 
@@ -33,45 +36,249 @@
           <label for="address_country">Country</label>
           <br/>
           <select required id="address_country"  name="countryGeoId">
+            <option value="USA" class="state"> United States </option>
             <option class="blank label"></option>
-            <option value="ABW" class="state">Aruba</option>
-            <option value="AFG" class="state">Afghanistan</option>
-            <option value="AGO" class="state">Angola</option>
-            <option value="AIA" class="state">Anguilla</option>
-            <option value="ALB" class="state">Albania</option>
-            <option value="AND" class="state">Andorra</option>
-            <option value="ANT" class="state">Netherlands Antilles</option>
-            <option value="ARE" class="state">United Arab Emirates</option>
-            <option value="ARG" class="state">Argentina</option>
-            <option value="ARM" class="state">Armenia</option>
-            <option value="ASM" class="state">American Samoa</option>
-            <option value="ATA" class="state">Antarctica</option>
-            <option value="ATF" class="state">French Southern Territories</option>
-            <option value="ATG" class="state">Antigua And Barbuda</option>
-            <option value="AUS" class="state">Australia</option>
-            <option value="AUT" class="state">Austria</option>
-            <option value="AZE" class="state">Azerbaijan</option>
-            <option value="BDI" class="state">Burundi</option>
-            <option value="BEL" class="state">Belgium</option>
-            <option value="BEN" class="state">Benin</option>
-            <option value="BFA" class="state">Burkina Faso</option>
-            <option value="BGD" class="state">Bangladesh</option>
-            <option value="BGR" class="state">Bulgaria</option>
-            <option value="BHR" class="state">Bahrain</option>
-            <option value="BHS" class="state">Bahamas</option>
-            <option value="BIH" class="state">Bosnia And Herzegowina</option>
-            <option value="BLR" class="state">Belarus</option>
-            <option value="BLZ" class="state">Belize</option>
-            <option value="BMU" class="state">Bermuda</option>
-            <option value="BOL" class="state">Bolivia</option>
-            <option value="BRA" class="state">Brazil</option>
-            <option value="BRB" class="state">Barbados</option>
-            <option value="BRN" class="state">Brunei Darussalam</option>
-            <option value="BTN" class="state">Bhutan</option>
-            <option value="BVT" class="state">Bouvet Island</option>
-            <option value="BWA" class="state">Botswana</option>
-            <option value="CAF" class="state">Central African Republic</option>
-            <option value="CAN" class="state">Canada</option>
+            <option value="AFG" class="state"> Afghanistan </option>
+            <option value="ALB" class="state"> Albania </option>
+            <option value="DZA" class="state"> Algeria </option>
+            <option value="ASM" class="state"> American Samoa </option>
+            <option value="AND" class="state"> Andorra </option>
+            <option value="AGO" class="state"> Angola </option>
+            <option value="AIA" class="state"> Anguilla </option>
+            <option value="ATA" class="state"> Antarctica </option>
+            <option value="ATG" class="state"> Antigua And Barbuda </option>
+            <option value="ARG" class="state"> Argentina </option>
+            <option value="ARM" class="state"> Armenia </option>
+            <option value="ABW" class="state"> Aruba </option>
+            <option value="AUS" class="state"> Australia </option>
+            <option value="AUT" class="state"> Austria </option>
+            <option value="AZE" class="state"> Azerbaijan </option>
+            <option value="BHS" class="state"> Bahamas </option>
+            <option value="BHR" class="state"> Bahrain </option>
+            <option value="BGD" class="state"> Bangladesh </option>
+            <option value="BRB" class="state"> Barbados </option>
+            <option value="BLR" class="state"> Belarus </option>
+            <option value="BEL" class="state"> Belgium </option>
+            <option value="BLZ" class="state"> Belize </option>
+            <option value="BEN" class="state"> Benin </option>
+            <option value="BMU" class="state"> Bermuda </option>
+            <option value="BTN" class="state"> Bhutan </option>
+            <option value="BOL" class="state"> Bolivia </option>
+            <option value="BIH" class="state"> Bosnia And Herzegowina </option>
+            <option value="BWA" class="state"> Botswana </option>
+            <option value="BVT" class="state"> Bouvet Island </option>
+            <option value="BRA" class="state"> Brazil </option>
+            <option value="IOT" class="state"> British Indian Ocean Territory </option>
+            <option value="BRN" class="state"> Brunei Darussalam </option>
+            <option value="BGR" class="state"> Bulgaria </option>
+            <option value="BFA" class="state"> Burkina Faso </option>
+            <option value="BDI" class="state"> Burundi </option>
+            <option value="KHM" class="state"> Cambodia </option>
+            <option value="CMR" class="state"> Cameroon </option>
+            <option value="CAN" class="state"> Canada </option>
+            <option value="CPV" class="state"> Verde </option>
+            <option value="CYM" class="state"> Cayman Islands </option>
+            <option value="CAF" class="state"> Central African Republic </option>
+            <option value="TCD" class="state"> Chad </option>
+            <option value="CHL" class="state"> Chile </option>
+            <option value="CHN" class="state"> China </option>
+            <option value="CXR" class="state"> Christmas Island </option>
+            <option value="CCK" class="state"> Cocos (keeling) Islands </option>
+            <option value="COL" class="state"> Colombia </option>
+            <option value="COM" class="state"> Comoros </option>
+            <option value="COG" class="state"> Congo </option>
+            <option value="COD" class="state"> Congo, The Democratic Republic Of The </option>
+            <option value="COK" class="state"> Islands </option>
+            <option value="CRI" class="state"> Costa Rica </option>
+            <option value="CIV" class="state"> D&apos;ivoire </option>
+            <option value="HRV" class="state"> Croatia (local Name: Hrvatska) </option>
+            <option value="CUB" class="state"> Cuba </option>
+            <option value="CYP" class="state"> Cyprus </option>
+            <option value="CZE" class="state"> Czech Republic </option>
+            <option value="DNK" class="state"> Denmark </option>
+            <option value="DJI" class="state"> Djibouti </option>
+            <option value="DMA" class="state"> Dominica </option>
+            <option value="DOM" class="state"> Dominican Republic </option>
+            <option value="TLS" class="state"> Timor </option>
+            <option value="ECU" class="state"> Ecuador </option>
+            <option value="EGY" class="state"> Egypt </option>
+            <option value="SLV" class="state"> geoCodeAlphaSalvador </option>
+            <option value="GNQ" class="state"> Equatorial Guinea </option>
+            <option value="ERI" class="state"> Eritrea </option>
+            <option value="EST" class="state"> Estonia </option>
+            <option value="ETH" class="state"> Ethiopia </option>
+            <option value="FLK" class="state"> Falkland Islands (malvinas) </option>
+            <option value="FRO" class="state"> Faroe Islands </option>
+            <option value="FJI" class="state"> Fiji </option>
+            <option value="FIN" class="state"> Finland </option>
+            <option value="FXX" class="state"> France, Metropolitan </option>
+            <option value="FRA" class="state"> France </option>
+            <option value="GUF" class="state"> French Guiana </option>
+            <option value="PYF" class="state"> French Polynesia </option>
+            <option value="ATF" class="state"> French Southern Territories </option>
+            <option value="GAB" class="state"> Gabon </option>
+            <option value="GMB" class="state"> Gambia </option>
+            <option value="GEO" class="state"> Georgia </option>
+            <option value="DEU" class="state"> Germany </option>
+            <option value="GHA" class="state"> Ghana </option>
+            <option value="GIB" class="state"> Gibraltar </option>
+            <option value="GRC" class="state"> Greece </option>
+            <option value="GRL" class="state"> Greenland </option>
+            <option value="GRD" class="state"> Grenada </option>
+            <option value="GLP" class="state"> Guadeloupe </option>
+            <option value="GUM" class="state"> Guam </option>
+            <option value="GTM" class="state"> Guatemala </option>
+            <option value="GIN" class="state"> Guinea </option>
+            <option value="GNB" class="state"> Guinea-bissau </option>
+            <option value="GUY" class="state"> Guyana </option>
+            <option value="HTI" class="state"> Haiti </option>
+            <option value="HMD" class="state"> Heard And Mc Donald Islands </option>
+            <option value="VAT" class="state"> See (vatican City State) </option>
+            <option value="HND" class="state"> Honduras </option>
+            <option value="HKG" class="state"> Kong </option>
+            <option value="HUN" class="state"> Hungary </option>
+            <option value="ISL" class="state"> Iceland </option>
+            <option value="IND" class="state"> India </option>
+            <option value="IDN" class="state"> Indonesia </option>
+            <option value="IRN" class="state"> (islamic Republic Of) </option>
+            <option value="IRQ" class="state"> Iraq </option>
+            <option value="IRL" class="state"> Ireland </option>
+            <option value="ISR" class="state"> Israel </option>
+            <option value="ITA" class="state"> Italy </option>
+            <option value="JAM" class="state"> Jamaica </option>
+            <option value="JPN" class="state"> Japan </option>
+            <option value="JOR" class="state"> Jordan </option>
+            <option value="KAZ" class="state"> Kazakhstan </option>
+            <option value="KEN" class="state"> Kenya </option>
+            <option value="KIR" class="state"> Kiribati </option>
+            <option value="PRK" class="state"> Korea, Democratic People&apos;s Republic Of </option>
+            <option value="KOR" class="state"> Korea, Republic Of </option>
+            <option value="KWT" class="state"> Kuwait </option>
+            <option value="KGZ" class="state"> Kyrgyzstan </option>
+            <option value="LAO" class="state"> People&apos;s Democratic Republic </option>
+            <option value="LVA" class="state"> Latvia </option>
+            <option value="LBN" class="state"> Lebanon </option>
+            <option value="LSO" class="state"> Lesotho </option>
+            <option value="LBR" class="state"> Liberia </option>
+            <option value="LBY" class="state"> Libyan Arab Jamahiriya </option>
+            <option value="LIE" class="state"> Liechtenstein </option>
+            <option value="LTU" class="state"> Lithuania </option>
+            <option value="LUX" class="state"> Luxembourg </option>
+            <option value="MAC" class="state"> Macau </option>
+            <option value="MKD" class="state"> Macedonia, The Former Yugoslav Republic Of </option>
+            <option value="MDG" class="state"> Madagascar </option>
+            <option value="MWI" class="state"> Malawi </option>
+            <option value="MYS" class="state"> Malaysia </option>
+            <option value="MDV" class="state"> Maldives </option>
+            <option value="MLI" class="state"> Mali </option>
+            <option value="MLT" class="state"> Malta </option>
+            <option value="MHL" class="state"> Marshall Islands </option>
+            <option value="MTQ" class="state"> Martinique </option>
+            <option value="MRT" class="state"> Mauritania </option>
+            <option value="MUS" class="state"> Mauritius </option>
+            <option value="MYT" class="state"> Mayotte </option>
+            <option value="MEX" class="state"> Mexico </option>
+            <option value="FSM" class="state"> Micronesia, Federated States Of </option>
+            <option value="MDA" class="state"> Moldova, Republic Of </option>
+            <option value="MCO" class="state"> Monaco </option>
+            <option value="MNG" class="state"> Mongolia </option>
+            <option value="MNE" class="state"> Montenegro </option>
+            <option value="MSR" class="state"> Montserrat </option>
+            <option value="MAR" class="state"> Morocco </option>
+            <option value="MOZ" class="state"> Mozambique </option>
+            <option value="MMR" class="state"> Myanmar </option>
+            <option value="NAM" class="state"> Namibia </option>
+            <option value="NRU" class="state"> Nauru </option>
+            <option value="NPL" class="state"> Nepal </option>
+            <option value="NLD" class="state"> Netherlands </option>
+            <option value="ANT" class="state"> Netherlands Antilles </option>
+            <option value="NCL" class="state"> Caledonia </option>
+            <option value="NZL" class="state"> Zealand </option>
+            <option value="NIC" class="state"> Nicaragua </option>
+            <option value="NER" class="state"> Niger </option>
+            <option value="NGA" class="state"> Nigeria </option>
+            <option value="NIU" class="state"> Niue </option>
+            <option value="NFK" class="state"> Norfolk Island </option>
+            <option value="MNP" class="state"> Northern Mariana Islands </option>
+            <option value="NOR" class="state"> Norway </option>
+            <option value="OMN" class="state"> Oman </option>
+            <option value="PAK" class="state"> Pakistan </option>
+            <option value="PLW" class="state"> Palau </option>
+            <option value="PSE" class="state"> Palestinian Territory, Occupied </option>
+            <option value="PAN" class="state"> Panama </option>
+            <option value="PNG" class="state"> Papua New Guinea </option>
+            <option value="PRY" class="state"> Paraguay </option>
+            <option value="PER" class="state"> Peru </option>
+            <option value="PHL" class="state"> Philippines </option>
+            <option value="PCN" class="state"> Pitcairn </option>
+            <option value="POL" class="state"> Poland </option>
+            <option value="PRT" class="state"> Portugal </option>
+            <option value="PRI" class="state"> Puerto Rico </option>
+            <option value="QAT" class="state"> Qatar </option>
+            <option value="REU" class="state"> Reunion </option>
+            <option value="ROU" class="state"> Romania </option>
+            <option value="RUS" class="state"> Russian Federation </option>
+            <option value="RWA" class="state"> Rwanda </option>
+            <option value="KNA" class="state"> Saint Kitts And Nevis </option>
+            <option value="LCA" class="state"> Saint Lucia </option>
+            <option value="VCT" class="state"> Saint Vincent And The Grenadines </option>
+            <option value="WSM" class="state"> Samoa </option>
+            <option value="SMR" class="state"> Marino </option>
+            <option value="STP" class="state"> Tome And Principe </option>
+            <option value="SAU" class="state"> Saudi Arabia </option>
+            <option value="SEN" class="state"> Senegal </option>
+            <option value="SRB" class="state"> Serbia </option>
+            <option value="SYC" class="state"> Seychelles </option>
+            <option value="SLE" class="state"> Sierra Leone </option>
+            <option value="SGP" class="state"> Singapore </option>
+            <option value="SVK" class="state"> Slovakia (slovak Republic) </option>
+            <option value="SVN" class="state"> Slovenia </option>
+            <option value="SLB" class="state"> Solomon Islands </option>
+            <option value="SOM" class="state"> Somalia </option>
+            <option value="SGS" class="state"> South Georgia And The South Sandwich Islands </option>
+            <option value="ZAF" class="state"> South Africa </option>
+            <option value="ESP" class="state"> Spain </option>
+            <option value="LKA" class="state"> Lanka </option>
+            <option value="SHN" class="state"> Helena </option>
+            <option value="SPM" class="state"> Pierre And Miquelon </option>
+            <option value="SDN" class="state"> Sudan </option>
+            <option value="SUR" class="state"> Suriname </option>
+            <option value="SJM" class="state"> Svalbard And Jan Mayen Islands </option>
+            <option value="SWZ" class="state"> Swaziland </option>
+            <option value="SWE" class="state"> Sweden </option>
+            <option value="CHE" class="state"> Switzerland </option>
+            <option value="SYR" class="state"> Syrian Arab Republic </option>
+            <option value="TWN" class="state"> Taiwan </option>
+            <option value="TJK" class="state"> Tajikistan </option>
+            <option value="TZA" class="state"> Tanzania, United Republic Of </option>
+            <option value="THA" class="state"> Thailand </option>
+            <option value="TGO" class="state"> Togo </option>
+            <option value="TKL" class="state"> Tokelau </option>
+            <option value="TON" class="state"> Tonga </option>
+            <option value="TTO" class="state"> Trinidad And Tobago </option>
+            <option value="TUN" class="state"> Tunisia </option>
+            <option value="TUR" class="state"> Turkey </option>
+            <option value="TKM" class="state"> Turkmenistan </option>
+            <option value="TCA" class="state"> Turks And Caicos Islands </option>
+            <option value="TUV" class="state"> Tuvalu </option>
+            <option value="UGA" class="state"> Uganda </option>
+            <option value="UKR" class="state"> Ukraine </option>
+            <option value="UMI" class="state"> United States Minor Outlying Islands </option>
+            <option value="ARE" class="state"> United Arab Emirates </option>
+            <option value="GBR" class="state"> United Kingdom </option>
+            <option value="URY" class="state"> Uruguay </option>
+            <option value="UZB" class="state"> Uzbekistan </option>
+            <option value="VUT" class="state"> Vanuatu </option>
+            <option value="VEN" class="state"> Venezuela </option>
+            <option value="VNM" class="state"> Nam </option>
+            <option value="VGB" class="state"> Virgin Islands (british) </option>
+            <option value="VIR" class="state"> Virgin Islands (u.s.) </option>
+            <option value="WLF" class="state"> Wallis And Futuna Islands </option>
+            <option value="ESH" class="state"> Western Sahara </option>
+            <option value="YEM" class="state"> Yemen </option>
+            <option value="YUG" class="state"> Yugoslavia </option>
+            <option value="ZMB" class="state"> Zambia </option>
+            <option value="ZWE" class="state"> Zimbabwe </option>
           </select>
       </div>
 

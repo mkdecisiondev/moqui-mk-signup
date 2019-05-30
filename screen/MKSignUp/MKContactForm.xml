@@ -9,6 +9,14 @@
         <default-response url="../MKBillingForm"/>
     </transition>
 
+    <transition name="logout">
+        <actions>
+            <script>ec.user.logoutUser()</script>
+        </actions>
+        <default-response url="../MKLoginPage"/>
+        <error-response url="."/>
+    </transition>
+
     <transition name="json" method="options" require-session-token="false">
         <default-response type="none" />
     </transition>

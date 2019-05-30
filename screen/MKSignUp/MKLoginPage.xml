@@ -7,12 +7,12 @@
     <transition name="login" require-session-token="false">
         <actions>
             <script>
-                println "-----------------------------------------------------"
                 println partyId
                 println username
                 println password
+                println "-----------------------------------------------------"
+                ec.user.loginUser(username, password)
             </script>
-            <script>ec.user.loginUser(username, password)</script>
         </actions>
         <default-response url="../MKContactForm"/>
         <error-response url="."/>
