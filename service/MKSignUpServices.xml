@@ -1,11 +1,11 @@
 <services>
     <service verb="create" noun="userAccount">   
         <in-parameters>
-            <parameter name="firstName"/>
-            <parameter name="lastName"/>
-            <parameter name="username"/>
-            <parameter name="newPassword"/>
-            <parameter name="newPasswordVerify"/>
+            <parameter name="firstName" required="true"/>
+            <parameter name="lastName" required="true"/>
+            <parameter name="username" required="true"/>
+            <parameter name="newPassword" required="true"/>
+            <parameter name="newPasswordVerify" required="true"/>
         </in-parameters>
         <out-parameters>
             <parameter name="partyId"/>
@@ -16,12 +16,12 @@
             </script>
 
             <if condition="queryForUsername != null">
-                <return error="true" message="Username already exists"/>
+                <return error="true" message="There is already an account with this email address."/>
             </if>
 
             <if condition="queryForUsername == null">
                 <service-call name="mantle.party.PartyServices.create#PersonCustomer" in-map="[partyId:partyId] + context" out-map="context"/>
-                <service-call name="org.moqui.impl.UserServices.create#UserAccount" in-map="[partyId:partyId] + context" out-map="context"/>
+                <service-call name="mantle.party.PartyServices.create#PartyUserAccount" in-map="[partyId:partyId, emailAddress:username, userGroupId:'ADMIN'] + context" out-map="context"/>
             </if>
 
             <script>
@@ -33,22 +33,32 @@
 
     <service verb="store" noun="PartyContact">
         <in-parameters>
-            <parameter name="partyId"/>
-            <parameter name="organizationName"/>
-            <parameter name="contactNumber"/>
-            <parameter name="countryGeoId"/>
-            <parameter name="address1"/>
+            <parameter name="organizationName" required="true"/>
+            <parameter name="contactNumber" required="true"/>
+            <parameter name="address1" required="true"/>
             <parameter name="address2"/>
-            <parameter name="postalCode"/>
-            <parameter name="city"/>
-            <parameter name="stateProvinceGeoId"/>
+            <parameter name="postalCode" required="true"/>
+            <parameter name="city" required="true"/>
+            <parameter name="stateProvinceGeoId" required="true"/>
         </in-parameters>
         <out-parameters>
             <parameter name="partyId"/>
         </out-parameters>
         <actions>
+            <script>
+                EntityValue queryForOrganizationName = ec.entity.find("mantle.party.Organization").condition( [ "organizationName" : organizationName ] ).one()
+            </script>
+
+            <if condition="queryForOrganizationName != null">
+                <return error="true" message="Organization already exists"/>
+            </if>
+
+            <if condition="queryForOrganizationName == null">
+                <service-call name="create#mantle.party.Organization" in-map="context" out-map="context"/>
+            </if>
+
             <service-call name="mantle.party.ContactServices.store#PartyContactInfo" in-map="[partyId:partyId] + context" out-map="context"/>
-            <service-call name="create#mantle.party.Organization" in-map="[partyId:partyId] + context" out-map="context"/>
+
             <script>
                 println "-------------------store party contact-------------------------"
                 println context
@@ -56,6 +66,8 @@
             </script>
         </actions>
     </service>
+
+
 
     <service verb="create" noun="PaymentMethod">
         <in-parameters>

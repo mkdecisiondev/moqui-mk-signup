@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
 
-    <transition name="login" require-session-token="false">
+    <transition name="mklogin" require-session-token="false">
         <actions>
             <script>
                 println partyId
@@ -14,7 +14,7 @@
                 ec.user.loginUser(username, password)
             </script>
         </actions>
-        <default-response url="../MKContactForm"/>
+        <default-response url="../MKDashboard"/>
         <error-response url="."/>
     </transition>
 
@@ -24,9 +24,15 @@
 
 
     <widgets>
-        <render-mode>
+        <!-- <render-mode>
             <text type="html,vuet" location="component://MKSignUp/screen/MKSignUp/Pages/MKLoginPage.html"/>
-        </render-mode>
+        </render-mode> -->
+        <label type="h1" text="Log In to Your Account"/>
+        <form-single name="MKLoginForm" transition="mklogin">
+            <field name="username"><default-field><text-line size="25"/></default-field></field>
+            <field name="password"><default-field><password/></default-field></field>
+            <field name="submitButton"><default-field title="Submit"><submit/></default-field></field>
+        </form-single>
     </widgets>
 
 

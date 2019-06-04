@@ -8,13 +8,18 @@
         <default-response type="none" />
     </transition>
 
-    <actions>
-    </actions>
+    <pre-actions><script>
+        // if user not already logged in redirect to login page
+        if (!ec.user.userId) sri.sendRedirectAndStopRender('./MKLoginPage')
+    </script></pre-actions>
 
     <widgets>
-        <render-mode>
+        <!-- <render-mode>
             <text type="html,vuet" location="component://MKSignUp/screen/MKSignUp/Pages/MKWelcomePage.html"/>
-        </render-mode>
+        </render-mode> -->
+        <label type="h1" text="Thank you for signing up."/>
+        <label type="p" text="We will be in contact with you shortly."/>
+        <label type="p" text="-- MK Decision Team"/>
     </widgets>
 
 

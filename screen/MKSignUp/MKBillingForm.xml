@@ -13,8 +13,10 @@
         <default-response type="none" />
     </transition>
 
-    <actions>
-    </actions>
+    <pre-actions><script>
+        // if user not already logged in redirect to login page
+        if (!ec.user.userId) sri.sendRedirectAndStopRender('./MKLoginPage')
+    </script></pre-actions>
 
     <widgets>
         <render-mode>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    <moqui.security.ArtifactGroup artifactGroupId="EMPLOYMENT_API"/>
+    <moqui.security.ArtifactAuthz userGroupId="ADMIN" authzActionEnumId="AUTHZA_ALL" artifactGroupId="EMPLOYMENT_API" authzTypeEnumId="AUTHZT_ALLOW"/>
+
+    <artifactGroups artifactGroupId="EMPLOYMENT_API">
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/Pages/MKSignUpForm*" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="Y"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/Pages/MKSignUpForm.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKContactForm*" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="Y"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKContactForm.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKLoginPage*" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="Y"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKLoginPage.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKBillingForm*" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="Y"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKBillingForm.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKWelcomePage*" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="Y"/>
+        <artifacts artifactName="component://MKSignUp/screen/MKSignUp/MKWelcomePage.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N"/>
+
+        <artifacts artifactName="MKSignUpServices.create#userAccount" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="MKSignUpServices.create#userAccount" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="MKSignUpServices.store#PartyContact" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="MKSignUpServices.store#PartyContact" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="MKSignUpServices.create#PaymentMethod" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="MKSignUpServices.create#PaymentMethod" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="N"/>
+
+    </artifactGroups>
+
+</entity-facade-xml>
