@@ -33,6 +33,7 @@
 
     <service verb="store" noun="PartyContact">
         <in-parameters>
+            <parameter name="personPartyId" default="ec.user.userAccount?.partyId"/>
             <parameter name="organizationName" required="true"/>
             <parameter name="contactNumber" required="true"/>
             <parameter name="address1" required="true"/>
@@ -54,21 +55,32 @@
             </if>
 
             <if condition="queryForOrganizationName == null">
-                <service-call name="create#mantle.party.Organization" in-map="context" out-map="context"/>
+                <service-call name="mantle.party.PartyServices.create#Organization" in-map="context" out-map="context"/>
             </if>
 
-            <service-call name="mantle.party.ContactServices.store#PartyContactInfo" in-map="[partyId:partyId] + context" out-map="context"/>
+            <service-call name="mantle.party.ContactServices.findOrCreate#PartyPostalAddress" in-map="[partyId:partyId] + context" out-map="context"/>
+
+            <service-call name="mantle.party.ContactServices.create#TelecomNumber" in-map="[partyId:personPartyId] + context" out-map="context"/>
+
+            <entity-find-one entity-name="mantle.party.contact.TelecomNumber" value-field="personTelecom" >
+                <field-map field-name="contactNumber" from="contactNumber" />
+            </entity-find-one>
+
+            <service-call name="mantle.party.ContactServices.store#PartyContactMech" in-map="[partyId:personPartyId, contactMechId:personTelecom.contactMechId, contactMechPurposeId:'PhonePrimary'] + context" out-map="context"/>
+
+
 
             <script>
                 println "-------------------store party contact-------------------------"
                 println context
                 println partyId
+
             </script>
         </actions>
     </service>
 
 
-
+    <!-- billing info not necessary for now -->
     <service verb="create" noun="PaymentMethod">
         <in-parameters>
             <parameter name="description"/>

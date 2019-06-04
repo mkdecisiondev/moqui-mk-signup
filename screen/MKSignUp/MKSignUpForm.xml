@@ -14,8 +14,8 @@
                 println "login complete"
             </script>
         </actions>
-        <!-- <default-response url="."/> -->
         <default-response url="../MKContactForm"/>
+        <error-response url="."/>
     </transition>
 
     
@@ -38,6 +38,7 @@
             <field name="newPasswordVerify"><default-field><password/></default-field></field>
             <field name="submitButton"><default-field title="Submit"><submit/></default-field></field>
         </form-single>
+        <link text="Already have an account? Log In" url="../MKLoginPage" />
     </widgets>
 
 

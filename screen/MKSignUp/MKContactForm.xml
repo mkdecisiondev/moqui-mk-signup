@@ -7,6 +7,7 @@
     <transition name="mkcontactinfo">
         <service-call name="MKSignUpServices.store#PartyContact" in-map="[partyId:partyId] + context" out-map="context"/>
         <default-response url="../MKWelcomePage"/>
+        <error-response url="."/>
     </transition>
 
     <transition name="logout">
@@ -21,10 +22,10 @@
         <default-response type="none" />
     </transition>
 
-    <pre-actions><script>
+    <!-- <pre-actions><script>
         // if user not already logged in redirect to login page
         if (!ec.user.userId) sri.sendRedirectAndStopRender('./MKLoginPage')
-    </script></pre-actions>
+    </script></pre-actions> -->
 
 
     <widgets>

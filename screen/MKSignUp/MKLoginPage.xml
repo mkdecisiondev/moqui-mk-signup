@@ -33,6 +33,7 @@
             <field name="password"><default-field><password/></default-field></field>
             <field name="submitButton"><default-field title="Submit"><submit/></default-field></field>
         </form-single>
+        <link text="Don't have an account? Sign Up" url="../MKSignUpForm" />
     </widgets>
 
 

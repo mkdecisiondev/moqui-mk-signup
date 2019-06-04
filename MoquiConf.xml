@@ -3,8 +3,11 @@
 <moqui-conf
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/moqui-conf-2.1.xsd">
     <screen-facade>
+        <screen location="component://webroot/screen/webroot.xml">
+            <subscreens-item name="MKSignUp" menu-title="MKSignUp Page" menu-include="true" location="component://MKSignUp/screen/MKSignUp.xml"/>
+        </screen>
         <screen location="component://webroot/screen/webroot/apps.xml">
-            <subscreens-item name="MKSignUp" menu-title="MKSignUp Page" menu-index="2" location="component://MKSignUp/screen/MKSignUp.xml" menu-include="Y"/>
+            <subscreens-item name="MKSignUp" menu-title="MKSignUp Page" menu-index="2" location="component://MKSignUp/screen/MKSignUp.xml"/>
         </screen>
     </screen-facade>
 </moqui-conf>
